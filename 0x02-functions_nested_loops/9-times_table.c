@@ -1,6 +1,6 @@
-#include "holberton.h"
+#include "main.h"
 /**
- * times_table - prints the times table from 0 - 9.
+ * times_table - prints the times table from 0 to 9.
 (*
  * Return: Nothing.
  */
