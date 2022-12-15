@@ -1,14 +1,14 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * print_number - prints a number
- * @n: Input number
+ * @nbr: Input number
  */
 
-void print_number(int n)
+void print_number(int nbr)
 {
 	long len, res, i, temp, expo;
 
-	res = n;
+	res = nbr;
 	expo = len =  1;
 /*Check negatives*/
 	if (res < 0)
