@@ -1,17 +1,17 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * print_square - draws a square using multiple terminal lines and #'s.
- * @n: the number of # to print in each line.
+ * @nbr: the number of # to print in each line.
  */
-void print_square(int n)
+void print_square(int nbr)
 {
 	int i, j;
 
-	if (n > 0)
+	if (nbr > 0)
 	{
-		for (i = 0; i < n; i++)
+		for (i = 0; i < nbr; i++)
 		{
-			for (j = 0; j < n; j++)
+			for (j = 0; j < nbr j++)
 				_putchar('#');
 			_putchar('\n');
 		}
