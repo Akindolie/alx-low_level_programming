@@ -1,27 +1,27 @@
 #include "main.h"
 /**
- *wildcmp - compare two strings
- *@firstString: first string parameter pointer
- *@secondString: second string parameter pointer
- *Return: 0
+ * wildcmp - compare two strings
+ * @str1: first string parameter pointer
+ * @str2: second string parameter pointer
+ * Return: 0
  */
- int wildcmp(char *firstString, char *secondString)
+ int wildcmp(char *str1, char *str2)
  {
-	 if (*firstString == '\0')
+	 if (*str1 == '\0')
 	 {
-		 if (*secondString != '\0' && *secondString == '*')
+		 if (*str2 != '\0' && *str2 == '*')
 		 {
-			 return (wildcmp(firstString, secondString + 1));
+			 return (wildcmp(str1, str2 + 1));
 		 }
-		 return (*secondString == '\0');
+		 return (*str2 == '\0');
 	 }
-	 if (*secondString == '*')
+	 if (*str2 == '*')
 	 {
-		 return (wildcmp(firstString + 1, secondString) || wildcmp(firstString, secondString + 1));
+		 return (wildcmp(str1 + 1, str2) || wildcmp(str1, str2 + 1));
 	 }
-	 else if (*firstString == *secondString)
+	 else if (*str1 == *str2)
 	 {
-		 return (wildcmp(firstString + 1, secondString +1));
+		 return (wildcmp(str1 + 1, str2 +1));
 	 }
 	 return (0);
  }
