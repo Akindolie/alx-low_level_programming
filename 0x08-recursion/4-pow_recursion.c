@@ -3,7 +3,7 @@
  * _pow_recursion - calculates the value of a raised to power b
  * @a: main value parameter
  * @b: the power parameter
- * Returns: the resulting integer from the calculation
+ * Return: the resulting integer from the calculation
  */
 int _pow_recursion(int a, int b)
 {
