@@ -6,7 +6,7 @@
  */
 int _strlen_recursion(char *word)
 {
-	int stringLen = o;
+	int stringLen = 0;
 
 	if (*word)
 	{
