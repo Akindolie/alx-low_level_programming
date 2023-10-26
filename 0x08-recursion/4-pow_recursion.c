@@ -5,7 +5,7 @@
  * @b: the power parameter
  * Returns: the resulting integer from the calculation
  */
-integer _pow_recursion(int a, int b)
+int _pow_recursion(int a, int b)
 {
 	if (b < 0)
 		return (-1);
