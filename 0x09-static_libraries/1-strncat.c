@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _strncat - Concatenate two strings with a limit on the number of characters copied.
  * @dest: Pointer to the destination string.
