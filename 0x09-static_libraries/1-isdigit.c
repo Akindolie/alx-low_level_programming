@@ -1,7 +1,7 @@
 /**
- * _isdigit - checks for digits 1-9
- * @c: character to check.
- * Return: 1 if c is a digit, otherwise return 0.
+ * _isdigit - checks if a character is a digit (0-9)
+ * @c: The character to check
+ * Return: 1 if 'c' is a digit, 0 otherwise
  */
 int _isdigit(int c)
 {
