@@ -1,30 +1,30 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * _strdup - copies a string into a new buffer
- * @str: the string to copy
+ * _strdup - Creates a duplicate of a string in a new buffer
+ * @strVal: the string to duplicate
  * Return: pointer to a new buffer
  */
-char *_strdup(char *str)
+char *_strdup(char *strVal)
 {
-	char *p;
-	unsigned int len, j;
+	char *x;
+	unsigned int len, y;
 
-	if (str == NULL)
+	if (strVal == NULL)
 		return (NULL);
-	for (len = 0; str[len] != '\0'; len++)
+	for (len = 0; strVal[len] != '\0'; len++)
 		;
 	len++;
 	if (len < 1)
 		return (NULL);
-	p = malloc(len * sizeof(char));
-	if (p == NULL)
+	x = malloc(len * sizeof(char));
+	if (x == NULL)
 	{
-		free(p);
+		free(x);
 		return (NULL);
 	}
-	for (j = 0; j < len; j++)
-		p[j] = str[j];
-	p[j] = '\0';
-	return (p);
+	for (y = 0; y < len; y++)
+		x[y] = strVal[y];
+	x[y] = '\0';
+	return (x);
 }
