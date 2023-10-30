@@ -17,7 +17,7 @@ int wordCounter(char *str, int pos, char firstChar)
 	int ix, wordCount, charCount, flag;
 
 	str[0] != ' ' ? (wordCount = 1) : (wordCount = 0);
-	for (ix = 0, flag = 0; str[ix]; i++)
+	for (ix = 0, flag = 0; str[ix]; ix++)
 	{
 		if (str[ix] == ' ' && str[ix + 1] != ' ' && str[ix + 1] != '\0' && flag == 0)
 		{
