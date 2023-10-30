@@ -8,7 +8,7 @@
 char *str_concat(char *str1, char *str2)
 {
 	char *p;
-	int str1cntr, str2cntr, sizeBuffer, index;
+	int str1cntr, str2cntr, sizeBuffer, idx;
 
 	/*Check for valid strings*/
 	if (str1 == NULL)
@@ -23,7 +23,7 @@ char *str_concat(char *str1, char *str2)
 	p = malloc(sizeBuffer * sizeof(char));
 	if (p == NULL)
 		return (NULL);
-	for (index = 0; index < sizeBuffer; index++)
-		index < str1cntr ? (p[index] = str1[index]) : (p[index] = str2[index - str1cntr]);
+	for (idx = 0; idx < sizeBuffer; idx++)
+		idx < str1cntr ? (p[idx] = str1[idx]) : (p[idx] = str2[idx - str1cntr]);
 	return (p);
 }
