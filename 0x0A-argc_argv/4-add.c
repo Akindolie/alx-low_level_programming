@@ -2,47 +2,40 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
-
 /**
- * is_valid_input - checks if the input arguments are valid digits
- * @argc: the argument count
- * @index: the current index in argv[]
- * @char_index: the index for characters in argv[index]
- * @argv: the argument vector
- *
- * Return: 0 on success (valid input), 1 on failure (invalid input)
+ * verifier - verifies if the inputs are valid
+ * @argc: argument count
+ * @x: counter for argv[]
+ * @y: counter for argv[][]
+ * @argv: argument vector
+ * Return: 0 for success, 1 for failure
  */
-int is_valid_input(int argc, int index, unsigned int char_index, char *argv[]) {
-    for (index = 1; index < argc; index++) {
-        for (char_index = 0; argv[index][char_index] != '\0'; char_index++) {
-            if (!isdigit(argv[index][char_index])) {
-                return 1; // Invalid input
-            }
-        }
-    }
-    return 0; // Valid input
+int verifier(int argc, int x, unsigned int y, char *argv[])
+{
+	for (x = 1; x <= argc; x++)
+		for (y = 0; argv[x] != '\0' && y < strlen(argv[x]); y++)
+			if (isdigit(argv[x][y]) == 0)
+				return (1);
+	return (0);
 }
-
 /**
- * main - adds all valid integer arguments together.
- * @argc: the argument count, only accepts valid integers separated by spaces.
- * @argv: the argument vector
- *
- * Return: 0 on success, 1 on failure
+ * main - Program adds all arguments provided they are digits.
+ * @argc: argument count should only accepts integer separated by spaces.
+ * @argv: argument vector
+ * Return: 0 for success, 1 for failure
  */
-int main(int argc, char *argv[]) {
-    int sum = 0;
-    int i;
+int main(int argc, char *argv[])
+{
+	int sum, x;
 
-    if (is_valid_input(argc, 1, 0, argv) == 1) {
-        printf("Error\n");
-        return 1; // Invalid input
-    }
-
-    for (i = 1; i < argc; i++) {
-        sum += atoi(argv[i]);
-    }
-
-    printf("%d\n", sum);
-    return 0; // Success
+	sum = 0;
+	if (verifier(argc, 1, 0, argv) == 1)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	for (x = 1; x < argc; x++)
+		sum += atoi(argv[x]);
+	printf("%d\n", sum);
+	return (0);
 }
