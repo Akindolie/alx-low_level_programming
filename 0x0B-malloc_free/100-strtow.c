@@ -1,69 +1,69 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * wordcounter - counts words and the letters in them
- * @str: string to count
- * @pos: position of the word to count characters from
- * @firstchar: position of the first letter of the word
- * if pos = 0, count the number of chars in the word
+ * wordCounter - Counts every word and the letters in them
+ * @str: string parameter to count
+ * @pos: The position of the word to count characters from
+ * @firstChar: position of the first letter of the word
+ * if pos = 0, count d number of chars in d word
  * else count number of words
- * Return: wordcount if pos == 0,
+ * Return: wordCount if pos == 0,
  * length of word if pos > 0,
- * position of word if pos > 0 && firstchar > 0
+ * position of word if pos > 0 && firstChar > 0
  */
-int wordcounter(char *str, int pos, char firstchar)
+int wordCounter(char *str, int pos, char firstChar)
 {
-	int i, wordcount, charcount, flag;
+	int idx, wordCount, charCount, flag;
 
-	str[0] != ' ' ? (wordcount = 1) : (wordcount = 0);
-	for (i = 0, flag = 0; str[i]; i++)
+	str[0] != ' ' ? (wordCount = 1) : (wordCount = 0);
+	for (idx = 0, flag = 0; str[idx]; i++)
 	{
-		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0' && flag == 0)
+		if (str[idx] == ' ' && str[idx + 1] != ' ' && str[idx + 1] != '\0' && flag == 0)
 		{
-			wordcount++;
+			wordCount++;
 			flag = 1;
 		}
-		if (pos > 0 && pos == wordcount)
+		if (pos > 0 && pos == wordCount)
 		{
-			if (pos > 0 && pos == wordcount && firstchar > 0)
-				return (i);
-			for (charcount = 0; str[i + charcount + 1] != ' '; charcount++)
+			if (pos > 0 && pos == wordCount && firstChar > 0)
+				return (idx);
+			for (charCount = 0; str[idx + charCount + 1] != ' '; charCount++)
 				;
-			return (charcount);
+			return (charCount);
 		}
-		if (str[i] == ' ')
+		if (str[idx] == ' ')
 			flag = 0;
 	}
-	return (wordcount);
+	return (wordCount);
 }
 /**
- * strtow - convert a string into a 2d array of words
- * @str: string to convert
+ * strtow - Program converts a string into a 2d array of words
+ * @str: The string parameter to convert
  * Return: double pointer to 2d array
  */
 char **strtow(char *str)
 {
-	int wc, wordlen, getfirstchar, len, i, j;
+	int w_c, wordLen, getfirstChar, len, i, j;
 	char **p;
 
 	for (len = 0; str[len]; len++)
 		;
 	if (str == NULL)
 		return (NULL);
-	wc = wordcounter(str, 0, 0);
-	if (len == 0 || wc == 0)
+	w_c = wordCounter(str, 0, 0);
+	if (len == 0 || w_c == 0)
 		return (NULL);
-	p = malloc((wc + 1) * sizeof(void *));
+	p = malloc((w_c + 1) * sizeof(void *));
 	if (p == NULL)
 		return (NULL);
-	for (i = 0, wordlen = 0; i < wc; i++)
+	for (i = 0, wordLen = 0; i < w_c; i++)
 	{
 		/* Allocate memory for nested elements */
-		wordlen = wordcounter(str, i + 1, 0);
+		wordLen = wordCounter(str, i + 1, 0);
 		if (i == 0 && str[i] != ' ')
-			wordlen++;
-		p[i] = malloc(wordlen * sizeof(char) + 1);
+			wordLen++;
+		p[i] = malloc(wordLen * sizeof(char) + 1);
 		if (p[i] == NULL)
 		{
 			for ( ; i >= 0; --i)
@@ -72,13 +72,13 @@ char **strtow(char *str)
 			return (NULL);
 		}
 		/* initialize each element of the nested array with the word*/
-		getfirstchar = wordcounter(str, i + 1, 1);
+		getfirstChar = wordCounter(str, i + 1, 1);
 		if (str[0] != ' ' && i > 0)
-			getfirstchar++;
+			getfirstChar++;
 		else if (str[0] == ' ')
-			getfirstchar++;
-		for (j = 0; j < wordlen; j++)
-			p[i][j] = str[getfirstchar + j];
+			getfirstChar++;
+		for (j = 0; j < wordLen; j++)
+			p[i][j] = str[getfirstChar + j];
 		p[i][j] = '\0';
 	}
 	p[i] = NULL;
