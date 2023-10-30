@@ -8,7 +8,7 @@
  * 
  * Return: Always returns 0 to indicate success.
  */
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
    // argc--; /* Decrement argc to pass checks */
     printf("%s\n", *argv);
