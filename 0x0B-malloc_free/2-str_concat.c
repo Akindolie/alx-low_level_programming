@@ -1,29 +1,27 @@
 #include <stdlib.h>
 /**
- * str_concat - concatenates two strings
- * @s1: first string
- * @s2: second string
- * Return: pointer to a new buffer containing s1 and s2
+ * str_concat - Outputs concatenates two strings
+ * @str1: first string parameter
+ * @str2: second string parameter
+ * Return: pointer to a new buffer containing str1 and str2
  */
-char *str_concat(char *s1, char *s2)
+char *str_concat(char *str1, char *str2)
 {
 	char *p;
-	int s1count, s2count, sizeBuffer, i;
+	int str1counter, str2counter, sizeBuffer, index;
 
 	/*Check for valid strings*/
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	for (s1count = 0; s1[s1count]; s1count++)
-		;
-	for (s2count = 0; s2[s2count]; s2count++)
-		;
-	sizeBuffer = s1count + s2count + 1;
+	if (str1 == NULL)
+		str1 = "";
+	if (str2 == NULL)
+		str2 = "";
+	for (str1counter = 0; str1[str1counter]; str1counter++);
+	for (str2counter = 0; str2[str2counter]; str2counter++);
+	sizeBuffer = str1counter + str2counter + 1;
 	p = malloc(sizeBuffer * sizeof(char));
 	if (p == NULL)
 		return (NULL);
-	for (i = 0; i < sizeBuffer; i++)
-		i < s1count ? (p[i] = s1[i]) : (p[i] = s2[i - s1count]);
+	for (index = 0; index < sizeBuffer; index++)
+		index < str1counter ? (p[index] = str1[index]) : (p[index] = str2[index - str1counter]);
 	return (p);
 }
