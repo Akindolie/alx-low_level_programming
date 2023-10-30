@@ -15,8 +15,10 @@ char *str_concat(char *str1, char *str2)
 		str1 = "";
 	if (str2 == NULL)
 		str2 = "";
-	for (str1counter = 0; str1[str1counter]; str1counter++);
-	for (str2counter = 0; str2[str2counter]; str2counter++);
+	for (str1counter = 0; str1[str1counter]; str1counter++)
+		;
+	for (str2counter = 0; str2[str2counter]; str2counter++)
+		;
 	sizeBuffer = str1counter + str2counter + 1;
 	p = malloc(sizeBuffer * sizeof(char));
 	if (p == NULL)
