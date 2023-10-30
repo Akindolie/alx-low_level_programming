@@ -1,15 +1,15 @@
 #include <stdio.h>
 /**
- * main - prints out all of the arguments passed to it.
+ * main - Outputs all arguments it receives.
  * @argc: argument count
  * @argv: argument vector
- * Return: 0 on success
+ * Return: Always returns 0 to indicate success.
  */
 int main(int argc, char *argv[])
 {
-	int i;
+	int index;
 
-	for (i = 0; i < argc; i++)
+	for (index = 0; index < argc; index++)
 		printf("%s\n", argv[i]);
 	return (0);
 }
