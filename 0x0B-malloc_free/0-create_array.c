@@ -7,8 +7,8 @@
  */
 char *create_array(unsigned int size, char c)
 {
-    char *arr; // Changed 'p' to 'arr'
-    unsigned int index; // Changed 'i' to 'index'
+    char *arr;
+    unsigned int index;
 
     if (size > 0)
     {
