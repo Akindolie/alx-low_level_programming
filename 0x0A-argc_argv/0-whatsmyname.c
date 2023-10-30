@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -7,9 +6,12 @@
  * @argv: Argument vector
  * Return: Always returns 0 to indicate success.
  */
-int main(int argc, char *argv[])
-{
-argc--;
-printf("%s\n", argv[0]);
-return (0);
+int main(int argc, char *argv[]) {
+    if (argc > 0) {
+        printf("%s\n", argv[0]);
+    } else {
+        printf("Program name not available.\n");
+    }
+
+    return 0;
 }
