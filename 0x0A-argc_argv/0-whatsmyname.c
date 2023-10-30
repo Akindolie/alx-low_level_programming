@@ -11,6 +11,6 @@
 int main(int argc, char *argv[])
 {
    // argc--; /* Decrement argc to pass checks */
-    printf("%s\n", argv[0]);
+    printf("%s\n", *argv);
     return (0);
 }
