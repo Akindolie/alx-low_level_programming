@@ -1,21 +1,13 @@
 #include <stdio.h>
-
 /**
- * main - Entry point of the program, prints its own name.
- * @argc: Argument count
- * @argv: Argument vector
- * Return: Always returns 0 to indicate success.
+ * main - program prints its own name.
+ * @argc: argument count
+ * @argv: argument vectors
+ * Return: 0 on success
  */
 int main(int argc, char *argv[])
 {
-    if (argc > 0)
-    {
-        printf("%s\n", argv[0]);
-    }
-    else
-    {
-        printf("Program name not available.\n");
-    }
-
-    return 0;
+	argc--; /*added to pass checks*/
+	printf("%s\n", argv[0]);
+	return (0);
 }
