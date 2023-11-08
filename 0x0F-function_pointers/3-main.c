@@ -5,7 +5,8 @@
   * main - Function
   * @argc: The number of arguments
   * @argv: The pointer to array of pointers
-  * Return: Returns 0 for success, 98 for malformed arguments, and 99 in case of no operator.
+  * Return: Returns 0 for success, 98 for malformed arguments,
+  * and 99 in case of no operator.
   */
 int main(int argc, char *argv[])
 {
