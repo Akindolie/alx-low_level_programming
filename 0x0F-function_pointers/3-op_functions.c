@@ -1,51 +1,51 @@
 #include "3-calc.h"
 /**
-  * op_add - adds 2 numbers
-  * @a: first number to add
-  * @b: second number to add
-  * Return: sum of the numbers
+  * op_add - Sums two numbers
+  * @x: First number parameter
+  * @y: Second number parameter
+  * Return: The sum of the two numbers
   */
-int op_add(int a, int b)
+int op_add(int x, int y)
 {
-	return (a + b);
+	return (x + y);
 }
 /**
   * op_sub - subtracts two numbers
-  * @a: first number
-  * @b: second number
-  * Return: difference of the numbers
+  * @x: First number parameter
+  * @y: second number parameter
+  * Return: The result of difference of the numbers
   */
-int op_sub(int a, int b)
+int op_sub(int x, int y)
 {
-	return (a - b);
+	return (x - y);
 }
 /**
   * op_mul - multiplies two numbers
-  * @a: first number
-  * @b: second number
-  * Return: result of the numbers
+  * @x: First number parameter
+  * @y: Second number parameter
+  * Return: Multiplication output
   */
-int op_mul(int a, int b)
+int op_mul(int x, int y)
 {
-	return (a * b);
+	return (x * y);
 }
 /**
   * op_div - divides two numbers
-  * @a: first number
-  * @b: second number
-  * Return: division of a by b
+  * @x: First number parameter
+  * @y: Second number parameter
+  * Return: division of x by y
   */
-int op_div(int a, int b)
+int op_div(int x, int y)
 {
-	return (a / b);
+	return (x / y);
 }
 /**
   * op_mod - divides two numbers, returns the remainder
-  * @a: first number
-  * @b: second number
+  * @x: First number parameter
+  * @y: Second number parameter
   * Return: remainder of the division
   */
-int op_mod(int a, int b)
+int op_mod(int x, int y)
 {
-	return (a % b);
+	return (x % y);
 }
