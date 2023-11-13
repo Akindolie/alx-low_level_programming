@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
   * p_char - Outputs characters
-  * @c: character to output
+  * @ch: character to output
   */
 void p_char(va_list ch)
 {
@@ -11,7 +11,7 @@ void p_char(va_list ch)
 }
 /**
   * p_int - Outputs integers
-  * @i: integer to output
+  * @in: integer to output
   */
 void p_int(va_list in)
 {
@@ -19,7 +19,7 @@ void p_int(va_list in)
 }
 /**
   * p_float - Output floats
-  * @f: float to output
+  * @ft: float to output
   */
 void p_float(va_list ft)
 {
@@ -27,7 +27,7 @@ void p_float(va_list ft)
 }
 /**
   * p_string - Outputs strings
-  * @s: string to output
+  * @str: string to output
   */
 void p_string(va_list str)
 {
