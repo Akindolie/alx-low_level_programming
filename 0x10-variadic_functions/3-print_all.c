@@ -2,49 +2,49 @@
 #include <stdarg.h>
 #include <stdio.h>
 /**
-  * p_char - prints characters
-  * @c: character to print
+  * p_char - Outputs characters
+  * @c: character to output
   */
-void p_char(va_list c)
+void p_char(va_list ch)
 {
-	printf("%c", va_arg(c, int));
+	printf("%c", va_arg(ch, int));
 }
 /**
-  * p_int - prints integers
-  * @i: integer to print
+  * p_int - Outputs integers
+  * @i: integer to output
   */
-void p_int(va_list i)
+void p_int(va_list in)
 {
-	printf("%d", va_arg(i, int));
+	printf("%d", va_arg(in, int));
 }
 /**
-  * p_float - prints floats
-  * @f: float to print
+  * p_float - Output floats
+  * @f: float to output
   */
-void p_float(va_list f)
+void p_float(va_list ft)
 {
-	printf("%f", va_arg(f, double));
+	printf("%f", va_arg(ft, double));
 }
 /**
-  * p_string - prints strings
-  * @s: string to print
+  * p_string - Outputs strings
+  * @s: string to output
   */
-void p_string(va_list s)
+void p_string(va_list str)
 {
 	char *string;
 
-	string = va_arg(s, char *);
+	string = va_arg(str, char *);
 	if (string == NULL)
 		string = "(nil)";
 	printf("%s", string);
 }
 /**
-  * print_all - prints any argument passed into it
-  * @format: formats symbols in order
+  * print_all - Outputs any arg parameter passed into it
+  * @format: Helps to format symbols
   */
 void print_all(const char * const format, ...)
 {
-	unsigned int i, j;
+	unsigned int x, y;
 	char *separator;
 	va_list argp;
 	v_types valid_types[] = {
@@ -54,23 +54,23 @@ void print_all(const char * const format, ...)
 		{"s", p_string}
 	};
 
-	i = j = 0;
+	x = y = 0;
 	separator = "";
 	va_start(argp, format);
-	while (format && format[i])
+	while (format && format[x])
 	{
-		j = 0;
-		while (j < 4)
+		y = 0;
+		while (y < 4)
 		{
-			if (format[i] == *valid_types[j].valid)
+			if (format[x] == *valid_types[y].valid)
 			{
 				printf("%s", separator);
-				valid_types[j].f(argp);
+				valid_types[y].f(argp);
 				separator = ", ";
 			}
-			j++;
+			y++;
 		}
-		i++;
+		x++;
 	}
 	printf("\n");
 }
