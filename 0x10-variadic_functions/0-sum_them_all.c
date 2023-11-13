@@ -2,20 +2,20 @@
 #include <stdio.h>
 #include <stdarg.h>
 /**
-  * sum_them_all - sums all arguments
-  * @n: number of arguments
-  * @...: variable list of arguments
-  * Return: sum of all arguments
+  * sum_them_all - Adds all input arguments
+  * @n: The count of arguments
+  * @...: The variable list of all arguments
+  * Return: Addition of all the arguments
   */
 int sum_them_all(const unsigned int n, ...)
 {
-	unsigned int i, result;
+	unsigned int x, result;
 	va_list ap;
 
 	if (n == 0)
 		return (0);
 	va_start(ap, n);
-	for (i = result = 0; i < n; i++)
+	for (x = result = 0; x < n; x++)
 	{
 		result += va_arg(ap, int);
 	}
